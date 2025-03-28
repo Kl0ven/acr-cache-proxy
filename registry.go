@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/jamesits/acr-cache-proxy/pkg/registry"
-	"github.com/jamesits/acr-cache-proxy/pkg/utils"
+	"github.com/Kl0ven/acr-cache-proxy/pkg/registry"
+	"github.com/Kl0ven/acr-cache-proxy/pkg/utils"
 	"log"
 	"net/http"
 	"net/http/httputil"

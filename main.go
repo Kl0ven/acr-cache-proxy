@@ -5,7 +5,7 @@ import (
 	"flag"
 	"fmt"
 	"github.com/Azure/azure-sdk-for-go/sdk/azidentity"
-	"github.com/jamesits/acr-cache-proxy/pkg/registry"
+	"github.com/Kl0ven/acr-cache-proxy/pkg/registry"
 	"log"
 	"os"
 	"time"
@@ -46,24 +46,24 @@ func main() {
 		os.Exit(255)
 	}
 
-	err = updateToken(upstreamDomain)
-	if err != nil {
-		log.Printf("initial token acquiring failed: %v\n", err)
-		os.Exit(255)
-	}
+	// err = updateToken(upstreamDomain)
+	// if err != nil {
+	// 	log.Printf("initial token acquiring failed: %v\n", err)
+	// 	os.Exit(255)
+	// }
 
 	log.Printf("token acquired")
 
 	// renew tokens in the background
-	go func() {
-		for {
-			<-time.After(tokenUpdateCheckInterval)
-			err := updateToken(upstreamDomain)
-			if err != nil {
-				log.Printf("unable to renew the token: %v\n", err)
-			}
-		}
-	}()
+	// go func() {
+	// 	for {
+	// 		<-time.After(tokenUpdateCheckInterval)
+	// 		err := updateToken(upstreamDomain)
+	// 		if err != nil {
+	// 			log.Printf("unable to renew the token: %v\n", err)
+	// 		}
+	// 	}
+	// }()
 
 	err = startRegistrySync(listenAddress)
 	if err != nil {

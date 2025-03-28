@@ -31,8 +31,8 @@ builds:
       - "-w"
     hooks:
       post:
-        - "sh -c 'upx \"{{ .Path }}\" || true'"
-        - "sudo setcap 'cap_net_bind_service=+ep' \"{{ .Path }}\""
+        - 'sh -c ''upx "{{ .Path }}" || true'''
+        - 'sudo setcap ''cap_net_bind_service=+ep'' "{{ .Path }}"'
 
 snapshot:
   version_template: "{{ incpatch .Version }}-next"
@@ -47,21 +47,21 @@ dockers:
     goarch: amd64
     goamd64: v3
     image_templates:
-      - jamesits/acr-cache-proxy:{{ .Version }}-amd64
+      - kloven/acr-cache-proxy:{{ .Version }}-amd64
     build_flag_templates:
       - "--platform=linux/amd64"
   - dockerfile: "Dockerfile.goreleaser"
     goarch: arm64
     image_templates:
-      - jamesits/acr-cache-proxy:{{ .Version }}-arm64
+      - kloven/acr-cache-proxy:{{ .Version }}-arm64
     build_flag_templates:
       - "--platform=linux/arm64"
 
 docker_manifests:
-  - name_template: "jamesits/acr-cache-proxy:{{ .Version }}"
+  - name_template: "kloven/acr-cache-proxy:{{ .Version }}"
     image_templates:
-      - jamesits/acr-cache-proxy:{{ .Version }}-amd64
-      - jamesits/acr-cache-proxy:{{ .Version }}-arm64
+      - kloven/acr-cache-proxy:{{ .Version }}-amd64
+      - kloven/acr-cache-proxy:{{ .Version }}-arm64
 
 checksum:
   name_template: "checksums.txt"

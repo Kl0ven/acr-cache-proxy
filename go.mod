@@ -1,4 +1,4 @@
-module github.com/jamesits/acr-cache-proxy
+module github.com/Kl0ven/acr-cache-proxy
 
 go 1.24.0
 

@@ -4,7 +4,7 @@ Azure Container Registry as an auto-authorized, pull-through Docker Hub proxy.
 
 ![Works - On My Machine](https://img.shields.io/badge/Works-On_My_Machine-2ea44f)
 ![Project Status - Feature Complete](https://img.shields.io/badge/Project_Status-Feature_Complete-2ea44f)
-[![Docker Image Version](https://img.shields.io/docker/v/jamesits/acr-cache-proxy?label=Docker%20Hub)](http://hub.docker.com/r/jamesits/acr-cache-proxy)
+[![Docker Image Version](https://img.shields.io/docker/v/kloven/acr-cache-proxy?label=Docker%20Hub)](http://hub.docker.com/r/kloven/acr-cache-proxy)
 
 Features:
 
