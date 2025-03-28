@@ -42,26 +42,26 @@ archives:
     formats: ["tar.xz"]
     wrap_in_directory: true
 
-dockers:
-  - dockerfile: "Dockerfile.goreleaser"
-    goarch: amd64
-    goamd64: v3
-    image_templates:
-      - kloven/acr-cache-proxy:{{ .Version }}-amd64
-    build_flag_templates:
-      - "--platform=linux/amd64"
-  - dockerfile: "Dockerfile.goreleaser"
-    goarch: arm64
-    image_templates:
-      - kloven/acr-cache-proxy:{{ .Version }}-arm64
-    build_flag_templates:
-      - "--platform=linux/arm64"
+# dockers:
+#   - dockerfile: "Dockerfile.goreleaser"
+#     goarch: amd64
+#     goamd64: v3
+#     image_templates:
+#       - kloven/acr-cache-proxy:{{ .Version }}-amd64
+#     build_flag_templates:
+#       - "--platform=linux/amd64"
+#   - dockerfile: "Dockerfile.goreleaser"
+#     goarch: arm64
+#     image_templates:
+#       - kloven/acr-cache-proxy:{{ .Version }}-arm64
+#     build_flag_templates:
+#       - "--platform=linux/arm64"
 
-docker_manifests:
-  - name_template: "kloven/acr-cache-proxy:{{ .Version }}"
-    image_templates:
-      - kloven/acr-cache-proxy:{{ .Version }}-amd64
-      - kloven/acr-cache-proxy:{{ .Version }}-arm64
+# docker_manifests:
+#   - name_template: "kloven/acr-cache-proxy:{{ .Version }}"
+#     image_templates:
+#       - kloven/acr-cache-proxy:{{ .Version }}-amd64
+#       - kloven/acr-cache-proxy:{{ .Version }}-arm64
 
 checksum:
   name_template: "checksums.txt"
